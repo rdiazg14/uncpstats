@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://www.todopostgresql.com/wp-content/uploads/2018/11/mini_estadistica_nueva.png" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://miro.medium.com/max/1400/1*0o44SgYfO_NgbEbqRICftw.png" width="400"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
