@@ -27,25 +27,28 @@
       <form action="{{ route('login') }}" method="post">
         @csrf
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input value="{{ old('email') }}" type="email" class="form-control" name="email" placeholder="Correo">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
-          @error('email')
-          <span>{{ $message }}</span>
-          @enderror
         </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+        @error('email')
+        <span class="text-danger">{{ $message }}</span>
+      @enderror
+    <div class="input-group mb-3">
+          <input type="password" class="form-control" name="password" placeholder="Contraseña">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
-        <div class="row">
+        @error('password')
+        <span class="text-danger">{{ $message }}</span>
+      @enderror
+      <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
