@@ -23,6 +23,9 @@ class Sidebar extends Component
      */
     public function render()
     {
-        return view('components.sidebar');
+        $nombre_usuario = "Juan Perez";
+        return view('components.sidebar',[
+            "usuario" => $nombre_usuario,
+        ]);
     }
 }

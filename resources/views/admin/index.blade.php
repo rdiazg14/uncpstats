@@ -51,3 +51,7 @@
   </div>
   <!-- /.content-wrapper -->
 @endsection
+
+@section('titulo')
+Inicio | UNCPStats
+@endsection
