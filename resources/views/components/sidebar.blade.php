@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">{{ $titulo }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -14,7 +14,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ $usuario }}</a>
+          <a href="#" class="d-block">{{ $nombre_usuario }}</a>
         </div>
       </div>
 
@@ -35,38 +35,39 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+               @foreach ($op_dash as $key1 => $value1)
+               <li class="nav-item">
+                 <a href="#" class="nav-link {{ $value1['activo']}}">
+                   <i class="nav-icon fas fa-th"></i>
+                   <p>
+                     {{ $value1['titulo']}}
+                     <span class="right badge badge-danger">{{ $value1['extra']}}</span>
+                   </p>
+                 </a>
+               </li>
+               @endforeach
+
+               @foreach($menu as $nombre_modulo => $opciones)
+          <li class="nav-item">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Bienvenido
+                {{ $nombre_modulo }}
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
+              @foreach ($opciones as $key2 => $value2)
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
+                  <p>{{ $value2['titulo'] }}</p>
                 </a>
               </li>
+              @endforeach
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+          @endforeach
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
